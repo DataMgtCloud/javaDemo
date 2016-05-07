@@ -1,0 +1,7 @@
+{
+  "service": {
+    "name": "<serviceName>",
+    "tags": ["proxy"],
+    "port": 8080
+  }
+}

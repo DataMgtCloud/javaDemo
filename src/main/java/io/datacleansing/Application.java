@@ -20,6 +20,10 @@ public class Application {
 
     @RequestMapping(value= "/")
     public String hello(){
-      return "Hello Summer";
+      String instance  = System.getenv().get("DMC_DEMO_INSTANCE_NAME");
+      if(instance == null || instance.length() == 0)
+        instance = "default instance";
+
+      return "Hello Summer from " + instance;
     }
 }
