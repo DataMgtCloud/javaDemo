@@ -4,4 +4,4 @@ FROM datamgtcloud/basejava
 COPY . /app/
 WORKDIR /app
 
-RUN source ./assembleService.sh
+RUN ./assembleService.sh
