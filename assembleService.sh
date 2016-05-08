@@ -8,6 +8,6 @@ cp build/libs/$ARCHIVE_NAME /opt/jars/.
 cp template/consul.json /etc/consul.d/.
 cp template/startService.sh /etc/service/${SVC_NAME}/run
 
-
+mkdir -p /etc/service/${SVC_NAME}
 sed -i 's,'"<serviceName>"','"$SVC_NAME"',g' /etc/consul.d/consul.json
 sed -i 's,'"<archiveName>"','"$ARCHIVE_NAME"',g' /etc/service/${SVC_NAME}/run
