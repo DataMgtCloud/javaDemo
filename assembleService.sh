@@ -6,8 +6,8 @@ ARCHIVE_NAME=$(ls build/libs/*.jar | awk '{print substr($1, 12)}')
 
 cp build/libs/$ARCHIVE_NAME /opt/jars/.
 cp template/consul.json /etc/consul.d/.
-cp template/startService.sh /etc/consul.d/.
+cp template/startService.sh /etc/service/${SVC_NAME}/run
 
 
 sed -i 's,'"<serviceName>"','"$SVC_NAME"',g' /etc/consul.d/consul.json
-sed -i 's,'"<archiveName>"','"$ARCHIVE_NAME"',g' /etc/consul.d/startService.sh
+sed -i 's,'"<archiveName>"','"$ARCHIVE_NAME"',g' /etc/service/${SVC_NAME}/run

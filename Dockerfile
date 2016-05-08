@@ -12,9 +12,8 @@ ADD boot.sh /sbin/boot
 
 
 # java scripts
-COPY startContainer.sh /usr/bin/
+COPY startContainer.sh /usr/bin/.
 COPY docker/consul.d/ /etc/consul.d/
-
 
 # Copy application code.
 COPY . /app/
