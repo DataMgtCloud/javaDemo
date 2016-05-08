@@ -9,12 +9,10 @@ start_consul_agent(){
 }
 
 scan_file(){
-  echo "Scaning the files "$1
   if [[ -f $1 ]]
   then
     while read -r line
     do
-      echo "Check the file "$line
       if [[ $line == *\"server* ]] && [[ $line == *true* ]] ;
       then
         echo Config file = $1 has server flag set. Consul agent will be started...
@@ -25,7 +23,6 @@ scan_file(){
 }
 
 scan_folder(){
-  echo "Scaning the folder"
   FILES=$1/*
   for f in $FILES
   do
